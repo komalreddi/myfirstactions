@@ -1,7 +1,10 @@
 name: secondflow
-on: push
+on: 
+    workflow_run:
+    workflows: ["myfirstaction"]
+    types:
+      - completed
 jobs:
-  needs: myfirstaction
   runs-on: ubuntu-latest
   steps:
     - name: installhttps
