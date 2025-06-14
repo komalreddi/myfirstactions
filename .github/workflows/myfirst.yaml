@@ -8,3 +8,18 @@ jobs:
         uses: actions/checkout@v3
       - name: disply
         run: echo "${{ toJSON(github) }}"
+
+  secondjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install HTTPD
+        run: sudo apt-get update && sudo apt-get install -y apache2
+
+      - name: enable
+        run: sudo systemctl enable apache2
+
+      - name: start
+        run: sudo systemctl start apache2
+
+      - name: Display Apache status
+        run: sudo systemctl status apache2
