@@ -15,5 +15,11 @@ jobs:
       - name: Install HTTPD
         run: sudo apt-get update && sudo apt-get install -y apache2
 
+      - name: enable
+        run: sudo systemctl enable apache2
+
+      - name: start
+        run: sudo systemctl start apache2
+
       - name: Display Apache status
         run: sudo systemctl status apache2
