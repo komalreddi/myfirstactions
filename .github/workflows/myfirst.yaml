@@ -10,6 +10,7 @@ jobs:
         run: echo "${{ toJSON(github) }}"
 
   secondjob:
+    needs: myfirstaction
     runs-on: ubuntu-latest
     steps:
       - name: Install HTTPD
