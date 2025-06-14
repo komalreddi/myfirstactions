@@ -1,0 +1,10 @@
+name: secondflow
+on: push
+jobs:
+  needs: myfirstaction
+  runs-on: ubuntu-latest
+  steps:
+    - name: installhttps
+      run: yum install httpd
+    - name: disply status
+      run: service httpd status
